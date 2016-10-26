@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { ConsoleService } from './console.service';
 
 @Injectable()
 export class LogDebugger {
-  constructor(private enabled: boolean) {}
+  constructor(private ConsoleService, private enabled: boolean) {}
 
   debug(message) {
     if (this.enabled) {
-      console.log(`DEBUG: ${message}`);
+      this.ConsoleService.log(`DEBUG: ${message}`);
     }
   }
 }

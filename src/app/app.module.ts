@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { ListComponent } from './list.component';
 import { DataService } from './data.service';
 import { LogDebugger } from './log-debugger.service';
+import { ConsoleService } from './console.service';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,13 @@ import { LogDebugger } from './log-debugger.service';
   ],
   providers: [
     DataService,
+    ConsoleService,
     {
       provide: LogDebugger,
-      useFactory: () => {
-        return new LogDebugger(true);
-      }
+      useFactory: (consoleService) => {
+        return new LogDebugger(consoleService, true);
+      },
+      deps: [ConsoleService]
     }
     ],
   bootstrap: [ListComponent]

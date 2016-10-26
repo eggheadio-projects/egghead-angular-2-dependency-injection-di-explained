@@ -1,6 +1,6 @@
 #Plunker
 
-This code can be found on [plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-angular-2-dependency-injection-di-explained/angular-2-factory-providers?preview=plnkr.html&show=src%2Fapp%2Flist.component.ts,preview)
+This code can be found on [plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-angular-2-dependency-injection-di-explained/angular-2-factory-providers-with-dependencies?preview=plnkr.html&show=src%2Fapp%2Flist.component.ts,preview)
 
 # Angular 2 Dependency Injection
 
