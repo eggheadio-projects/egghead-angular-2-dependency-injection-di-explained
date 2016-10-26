@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ListComponent } from './list.component';
 import { DataService } from './data.service';
-import { OtherDataService } from './other-data.service';
+import { LogDebugger } from './log-debugger.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,13 @@ import { OtherDataService } from './other-data.service';
     HttpModule
   ],
   providers: [
-    {provide: DataService, useClass: OtherDataService}
+    DataService,
+    {
+      provide: LogDebugger,
+      useFactory: () => {
+        return new LogDebugger(true);
+      }
+    }
     ],
   bootstrap: [ListComponent]
 })

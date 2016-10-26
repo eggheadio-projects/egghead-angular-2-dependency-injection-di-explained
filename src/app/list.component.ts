@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
+import { LogDebugger } from './log-debugger.service';
 
 // All the components and pipes now must be 
 // declared via an NgModule since 2.0.0-rc.6
@@ -20,9 +21,10 @@ export class ListComponent implements OnInit {
   items:Array<any>;
 
   
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService,private logDebugger: LogDebugger) {}
 
   ngOnInit() {
+    this.logDebugger.debug('Getting items...')
     this.items = this.dataService.getItems();
   }
 
