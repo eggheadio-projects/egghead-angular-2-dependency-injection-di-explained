@@ -2,7 +2,7 @@
 
 This code can be found on [plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-angular-2-dependency-injection-di-explained/angular-2-what-is-dependency-injection-b9f0c87e?preview=plnkr.html&show=src%2Fapp%2Fapp.component.ts,preview)
 
-# Angular2Fundamentals
+# Angular 2 Dependency Injection
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
