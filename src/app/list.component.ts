@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 
+// All the components and pipes now must be 
+// declared via an NgModule since 2.0.0-rc.6
+// https://github.com/angular/angular/blob/master/CHANGELOG.md
+
 @Component({
   selector: 'list-component',
   template: `
