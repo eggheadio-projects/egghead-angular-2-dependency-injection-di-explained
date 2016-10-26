@@ -3,20 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { Engine } from './engine/engine.component';
+import { EngineService } from './engine.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Engine
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [EngineService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

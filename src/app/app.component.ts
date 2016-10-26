@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { Engine } from './engine/engine.component';
+import { EngineService } from './engine.service';
 
-// @Component({
-//   selector: 'app-root',
-//   template: `<Engine></Engine>`
-// })
+@Component({
+  selector: 'app-car',
+  template: `<div>
+
+  {{engine.rumble}}
+  
+</div>`
+})
 export class AppComponent {
   
-  constructor(private engine: Engine) {}
-
-  startEngine(){
-    this.engine.start()
-  }
+  constructor(private engine: EngineService) {}
+  
 }
