@@ -1,20 +1,21 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import './polyfills.ts';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { Car, environment } from './app/';
-import { Engine } from './app/engine'
-import { Doors } from './app/doors'
+import { environment } from './environments/environment';
+import { AppModule } from './app';
+import { Engine } from './app/engine/engine.component'
+import { AppComponent } from './app/app.component'
 
 if (environment.production) {
   enableProdMode();
 }
-
-function main() {
+function main () {
   let engine = new Engine();
-  let doors = new Doors();
-  let car = new Car(engine, doors);
+  let car = new AppComponent(engine);
 
   car.startEngine();
 }
 
 main();
-// bootstrap(Car);
+// platformBrowserDynamic().bootstrapModule(AppModule);

@@ -1,2 +1,2 @@
-export {environment} from './environment';
-export {Car} from './car';
+export * from './app.component';
+export * from './app.module';
