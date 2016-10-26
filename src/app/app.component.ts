@@ -4,6 +4,8 @@ import { EngineService } from './engine.service';
 // All the components and pipes now must be 
 // declared via an NgModule since 2.0.0-rc.6
 // https://github.com/angular/angular/blob/master/CHANGELOG.md
+// The example code was modified to display 
+// output as text 
 
 @Component({
   selector: 'app-car',
