@@ -2,21 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
-import { EngineService } from './engine.service';
+import { ListComponent } from './list.component';
+import { DataService } from './data.service';
 
+// All the components and pipes now must be 
+// declared via an NgModule since 2.0.0-rc.6
+// https://github.com/angular/angular/blob/master/CHANGELOG.md
 
 @NgModule({
   declarations: [
-    AppComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [EngineService],
-  bootstrap: [AppComponent]
+  providers: [DataService],
+  bootstrap: [ListComponent]
 })
 export class AppModule {
 }
