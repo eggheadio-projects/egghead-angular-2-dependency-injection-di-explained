@@ -21,10 +21,9 @@ export class ListComponent implements OnInit {
   items:Array<any>;
 
   
-  constructor(private dataService: DataService,private logDebugger: LogDebugger) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.logDebugger.debug('Getting items...')
     this.items = this.dataService.getItems();
   }
 
