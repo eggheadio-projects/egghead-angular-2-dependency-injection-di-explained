@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { DataService } from './data.service';
 import { LogDebugger } from './log-debugger.service';
 
@@ -10,7 +11,7 @@ import { LogDebugger } from './log-debugger.service';
   selector: 'list-component',
   template: `
     <ul>
-      <li *ngFor="let item of items">
+      <li *ngFor="let item of items | async">
         {{item.id}}: {{item.name}} lives in {{item.country}}
       </li>  
     </ul>
@@ -18,7 +19,7 @@ import { LogDebugger } from './log-debugger.service';
 })
 export class ListComponent implements OnInit {
   
-  items:Array<any>;
+  items:Observable<Array<any>>;
 
   
   constructor(private dataService: DataService) {}
