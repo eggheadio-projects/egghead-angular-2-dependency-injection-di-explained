@@ -6,6 +6,9 @@ import { ListComponent } from './list.component';
 import { DataService } from './data.service';
 import { LogDebugger } from './log-debugger.service';
 import { ConsoleService } from './console.service';
+import { API_URL } from './app.tokens';
+import { THIRD_PARTY_PROVIDERS } from './third-party';
+
 
 // apiUrl is set to ./src/api to work in plunker
 
@@ -29,9 +32,10 @@ import { ConsoleService } from './console.service';
       deps: [ConsoleService]
     },
     {
-      provide: 'apiUrl',
+      provide: API_URL,
       useValue: './src/api'
-    }
+    },
+    THIRD_PARTY_PROVIDERS
     ],
   bootstrap: [ListComponent]
 })
