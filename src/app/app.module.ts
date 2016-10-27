@@ -7,6 +7,8 @@ import { DataService } from './data.service';
 import { LogDebugger } from './log-debugger.service';
 import { ConsoleService } from './console.service';
 
+// apiUrl is set to ./src/api to work in plunker
+
 @NgModule({
   declarations: [
     ListComponent,
@@ -28,7 +30,7 @@ import { ConsoleService } from './console.service';
     },
     {
       provide: 'apiUrl',
-      useValue: 'http://localhost:4200/api'
+      useValue: './src/api'
     }
     ],
   bootstrap: [ListComponent]
