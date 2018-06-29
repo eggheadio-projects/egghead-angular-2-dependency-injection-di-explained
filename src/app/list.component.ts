@@ -13,7 +13,8 @@ import { DataService } from './data.service';
         {{item.id}}: {{item.name}} lives in {{item.country}}
       </li>  
     </ul>
-  `
+  `,
+  providers: [DataService]
 })
 export class ListComponent implements OnInit {
   
