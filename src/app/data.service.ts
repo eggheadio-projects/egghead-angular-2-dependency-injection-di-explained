@@ -1,20 +1,20 @@
 import { LogDebugger } from './log-debugger.service';
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Inject } from '@angular/core';
 
 @Injectable()
 export class DataService {
 
-  constructor(private logDebugger: LogDebugger) { }
+  apiUrl = 'http://localhost:4200/api';
 
-  items: Array<any> = [
-    { id: 0, name: 'Pascal Precht', country: 'Germany' },
-    { id: 1, name: 'Christoph Burgdorf', country: 'Germany' },
-    { id: 2, name: 'Thomas Burleson', country: 'United States' }
-  ]
+  constructor(private logDebugger: LogDebugger, private http: http, @Inject('apiUrl') private apiUrl) { }
 
   getItems() {
     this.logDebugger.debug('Getting items...');
-    return this.items;
+    return this.http.get(`${this.apiUrl}/items`)
+      .map(res => res.json())
+      .map(data => data.items);
   }
 
 }
