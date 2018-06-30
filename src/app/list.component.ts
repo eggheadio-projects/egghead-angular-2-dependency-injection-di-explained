@@ -18,13 +18,13 @@ import { ConsoleService } from './console.service';
   `,
   providers: [
     DataService,
-    ConsoleService, 
+    ConsoleService,
     {
       provide: LogDebugger,
       useFactory: (consoleService) => 
         return new LogDebugger(consoleService, true);
-    },
-    deps: [ConsoleService]
+      },
+      deps: [ConsoleService]
   ]
 })
 export class ListComponent implements OnInit {
@@ -32,11 +32,9 @@ export class ListComponent implements OnInit {
   items: Array<any>;
 
 
-  constructor(private dataService: DataService, private logDebugger: LogDebugger) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.logDebugger.debug('Getting items...'
-    )
     this.items = this.dataService.getItems();
   }
 
