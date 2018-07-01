@@ -6,8 +6,6 @@ import { Inject } from '@angular/core';
 @Injectable()
 export class DataService {
 
-  apiUrl = 'http://localhost:4200/api';
-
   constructor(private logDebugger: LogDebugger, private http: http, @Inject('apiUrl') private apiUrl) { }
 
   getItems() {
