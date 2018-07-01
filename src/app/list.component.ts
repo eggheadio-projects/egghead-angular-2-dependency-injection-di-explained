@@ -8,6 +8,7 @@ import { ConsoleService } from './console.service';
 // https://github.com/angular/angular/blob/master/CHANGELOG.md
 
 @Component({
+  moduleId: module.id,
   selector: 'list-component',
   template: `
     <ul>
@@ -32,11 +33,10 @@ export class ListComponent implements OnInit {
   items: Array<any>;
 
 
-  constructor(private dataService: DataService, private logDebugger: LogDebugger) { }
+  constructor(private dataService: DataService, private logDebugger: LogDebugger) {}
 
   ngOnInit() {
-    this.logDebugger.debug('Getting items...'
-    )
+    this.logDebugger.debug('Getting items...')
     this.items = this.dataService.getItems();
   }
 
