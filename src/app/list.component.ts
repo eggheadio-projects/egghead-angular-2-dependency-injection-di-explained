@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DataService } from './data.service';
 import { LogDebugger } from './log-debugger.service';
-import { ConsoleService } from './console.service';
+import { ConsoleService } from './console.service'; 
+import { THIRD_PARTY_PROVIDERS } from './third-party';
+import { API_URL } from './app.tokens';
 
 // All the components and pipes now must be 
 // declared via an NgModule since 2.0.0-rc.6
@@ -29,9 +31,10 @@ import { ConsoleService } from './console.service';
       deps: [ConsoleService]
     },
     {
-      provide: 'apiUrl',
+      provide: API_URL,
       useValue: 'http://localhost:4200/api'
-    }
+    },
+    THIRD_PARTY_PROVIDERS
   ]
 })
 export class ListComponent implements OnInit {
