@@ -6,6 +6,7 @@ import { OtherDataService } from '../other-data.service';
 // https://github.com/angular/angular/blob/master/CHANGELOG.md
 
 @Component({
+  modeuleId: module.id,
   selector: 'list-component',
   template: `
     <ul>
