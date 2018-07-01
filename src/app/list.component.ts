@@ -8,6 +8,7 @@ import { ConsoleService } from './console.service';
 // https://github.com/angular/angular/blob/master/CHANGELOG.md
 
 @Component({
+  moduleId: module.id,
   selector: 'list-component',
   template: `
     <ul>

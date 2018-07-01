@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataService {
 
-  constructor(private logDebugger: LogDebugger) { }
+  constructor(private logDebugger: LogDebugger) {}
 
   items: Array<any> = [
     { id: 0, name: 'Pascal Precht', country: 'Germany' },
