@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
-
+import { OtherDataService } from '../other-data.service';
 // All the components and pipes now must be 
 // declared via an NgModule since 2.0.0-rc.6
 // https://github.com/angular/angular/blob/master/CHANGELOG.md
@@ -14,7 +14,9 @@ import { DataService } from './data.service';
       </li>  
     </ul>
   `,
-  providers: [DataService]
+  providers: [
+    { provide: DataService, useClass: OtherDataService }
+  ]
 })
 export class ListComponent implements OnInit {
   
