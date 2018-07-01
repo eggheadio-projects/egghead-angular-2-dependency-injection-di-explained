@@ -1,6 +1,6 @@
-import { Opaquetoken } from '@angular/core';
+import { OpaqueToken } from '@angular/core';
 
-const PI_URL = new OpaqueToken('apiUrl');
+const API_URL = new OpaqueToken('apiUrl');
 
 export const THIRD_PARTY_PROVIDERS = [
 {
